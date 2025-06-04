@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <!-- 
+    Viarable: It is a container to store the data.
+                We can assign and declare the values to the variables.
+    
+    Types of Variables:
+        1. var : We can declare the same variable multiple times and
+            can assign multiple times.
+        2. let : We can declare a variable only once and can assign values multiple times.
+        3. const : We can declare and assign a variable only once.
+    
+    Rules for identifiers :
+        1. cannot start with numbers
+        2. can have _, $, small and capital alphabets and numbers only.
+        3. case sensitive
+        4. must be in camel case
+        5. identifier should be relevent to the context
+    -->
+    <script>
+        var a = 10; // global scope
+        let b = 20; //global scope
+        const c = 30; //global scope
+        console.log(a,b,c) //10,20,30
+
+        var a=20; //global scope
+        // let b=30; Identifier 'b' has already been declared
+        // const c=40; Identifier 'c' has already been declared
+        console.log(a,b) //20,20
+
+        a=40;
+        b=40;
+        // c=40; Assignment to constant variable.
+        console.log(a,b,c) // 40,40,30
+
+        if(true){
+            a=80;
+            b=80;
+        }
+
+        console.log(a,b) //80,80
+
+        function variable(){
+            var a=100; //functional scope
+            let b=200; //functional scope
+            const c=100; //functional scope
+            console.log(a,b,c)
+        }
+
+        variable() //100,200,100
+        console.log(a,b,c) // 80,80,30
+    </script>
+</body>
+</html>
