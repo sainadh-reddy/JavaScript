@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+        var a=20;
+        console.log(a); // 20
+        console.log(b); // undefined
+        var b=10;
+        let c=10;
+        if(true){
+            console.log(b); // 10 cause global variable 
+            // console.log(c); // error: cannot access c before initialization
+            let c=20;
+            var b=20;
+            console.log(b); // 20
+            console.log(c); //20 only in the block
+        }
+
+        console.log(b); // 20 override 10 because global scope
+        console.log(c); // 10 
+    </script>
+</body>
+</html>
