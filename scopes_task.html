@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Scope</title>
+</head>
+<body>
+    <script>
+        // 1
+        var username="admin";
+        function function1(){
+            console.log(username);// undefined cause: hoisting
+            var username="guest";
+        }
+        function1()
+
+        // 2
+        // let status="online";
+        // function function2(){
+        //     status="offline";//cannot access before initializatin
+        //     let status="offline";
+        // }
+        // function2()
+
+        // 3
+        var title="JavaScript";
+        function function3(){
+            for(i=0;i<1;i++){
+                title="Java";
+
+            }
+        }
+        function3()
+        console.log(title)//Java
+
+        // 4
+        var a=10;
+        var b=20;
+        function function4(){
+            a=20;
+            b=30;
+        }
+        function4()
+        console.log(a,b)//20,30
+
+        // 5
+        var role = "teacher";
+        function function5(){
+            var role="teacher";
+            console.log(role);//teacher
+        }
+        function5();
+        console.log(role)//teacher
+        
+    </script>
+</body>
+</html>
