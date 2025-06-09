@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mixed_concepts</title>
+</head>
+<body>
+    <script>
+        // 1
+        var name="global";
+        function function1(){
+            var name="function";
+            if(true){
+                let name="Block";
+            }
+        }
+        function1();
+
+        // 2
+        function function2(){
+            console.log(a); // undefined cause: Hoisting
+            var a=10;
+        }
+        function2();
+
+        // 3
+        // function function3(){
+        //     if(true){
+        //         let x = 10;
+        //     }
+        //     console.log(x);// x is not defined
+        // }
+        // function3();
+
+        // 4
+        if(true){
+            var a=1;
+            let b=2;
+        }
+        console.log(a); // 1
+        // console.log(b); // b is not defind
+
+        // 5
+        var id=1;
+        function function5(){
+            var id=2;
+            if(true){
+                let id=3;
+                console.log(id) //3
+            }
+            console.log(id) //2
+        }
+        function5();
+        console.log(id); //1
+    </script>
+</body>
+</html>
