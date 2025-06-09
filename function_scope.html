@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1
+        // function function1(){
+        //     let role="teacher";
+        // }
+        // function1();
+        // console.log(role); // not defined
+
+        // 2
+        function function2(){
+            let x="outer";
+            function inner(){
+                let x="inner";
+                console.log(x);// inner
+            }
+            inner();
+            console.log(x);//outer
+        }
+        function2();
+
+        // 3
+        function function3(){
+            console.log(x);// undefined
+            var x=10;
+            console.log(x);// 10
+        }
+        function3();
+
+        // 4
+        function function4(){
+            for(i=0; i<1;i++){
+                var i=10;
+            }
+            console.log(i);// 11
+        }
+        function4();
+
+        // 5
+        function show(id){
+            console.log(id);// 5
+            var id=100;
+            console.log(id);// 100
+        }
+        show(5);
+
+    </script>
+</body>
+</html>
