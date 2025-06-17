@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 2</title>
+</head>
+<body>
+    <!-- Login System with Device Check
+    Ask if user is logged in (yes or no), and device type (mobile or desktop).
+    • If logged in
+    • If from mobile → Show "Mobile Dashboard"
+    • Else → Show "Desktop Dashboard"
+    • Else → Show "Please login" -->
+    <script>
+        let log=prompt("logged in?(yes or no)");
+        if(log=="yes"){
+            let device = prompt("device type?(mobile or desktop)");
+            if(device=="mobile"){
+                console.log("Mobile dashboard");
+            }
+            else if(device=="desktop"){
+                console.log("Desktop dashboard");
+            }
+        }
+        else{
+            console.log("Please login");
+        }
+    </script>
+
+</body>
+</html>

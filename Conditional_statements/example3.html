@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 3</title>
+</head>
+<body>
+    <!-- Nested Discount Offer
+    Ask for cart value, Prime status, and if coupon applied.
+    • If cart value is more than 500
+    • If user is Prime → Show "20 percent discount"
+    • Else
+    • If coupon is applied → Show "10 percent discount"
+    • Else → Show "5 percent discount"
+    • Else → Show "No discount" -->
+
+    <script>
+        let cart=Number(prompt("Enter price"));
+        if(cart>=500){
+            let prime = prompt("Are you a prime member?(yes or no)");
+            if(prime=="yes"){
+                console.log("20% discount");
+            }
+            else{
+                let coupon=prompt("coupon applied?(yes or no)");
+                if(coupon=="yes"){
+                    console.log("10% discount");
+                }
+                else{
+                    console.log("5% discount");
+                }
+            }
+        }
+        else{
+            console.log("No discount")
+        }
+    </script>
+</body>
+</html>

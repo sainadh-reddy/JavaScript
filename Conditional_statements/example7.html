@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exanple 7</title>
+</head>
+<body>
+    <!-- Ask for currency type (USD, EUR, INR) and amount.
+    Use switch on currency:
+    • Inside each case
+    • If amount is more than 1000 → Add bonus amount
+    • Else → Use standard conversion -->
+    <script>
+        let currency=prompt("Enter currency(usd or eur or inr)")
+        let amount=Number(prompt("Enter amount in inr"))
+        switch(currency){
+            case "usd":
+                console.log(amount/(85.96));
+                break;
+            case "eur":
+                console.log(amount/(99.68));
+            case "inr":
+                console.log(amount);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 6</title>
+</head>
+<body>
+    <!-- Smart Greeting App
+    Ask for language (en, hi, fr) and time of day (morning or evening).
+    Use switch on language:
+    • Inside each case
+    • If morning → Show "Good Morning" in that language
+    • Else → Show "Good Evening" in that language -->
+    <script>
+        let lang=prompt("Enter language(telugu or english or hindi or french)");
+        let time=prompt("Enter time of day(morning or evening)");
+        switch(lang){
+            case "telugu":
+                if(time="morning"){
+                    console.log("శుభోదయం")
+                }
+                else{
+                    console.log("శుభ సాయంత్రం")
+                }
+                break;
+            case "hindi":
+                if (time = "morning") {
+                    console.log("शुभ प्रभात")
+                }
+                else {
+                    console.log("शुभ संध्या")
+                }
+                break;
+            case "french":
+                if(time = "morning") {
+                    console.log("bonjour")
+                }
+                else {
+                    console.log("bonne soirée")
+                }
+                break;
+            default:
+                if(time = "morning") {
+                    console.log("Good morning")
+                }
+                else {
+                    console.log("Good evening")
+                }
+                break;
+        }
+    </script>
+</body>
+</html>

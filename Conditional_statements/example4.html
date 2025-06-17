@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 4</title>
+</head>
+<body>
+    <!-- Temperature Analyzer
+    Ask for temperature and time of day.
+    • If temperature is more than 35
+    • If time is afternoon → Show "Extreme Heat Warning"
+    • Else → Show "Hot Weather"
+    • Else if temperature is between 25 and 35 → Show "Normal"
+    • Else → Show "Cold" -->
+    <Script>
+        let temperature=Number(prompt("Enter temperature"));
+        if(temperature>35){
+            let time=prompt("Enter time?(morning or afternoon or evening or night)");
+            if(time=="afternoon"){
+                console.log("Extreme Heat Warning");
+            }
+            else{
+                console.log("Hot Weather");
+            }
+        }
+        else if(temperature>25){
+            console.log("Normal");
+        }
+        else{
+            console.log("Cold")
+        }
+    </Script>
+</body>
+</html>

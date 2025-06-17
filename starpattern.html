@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="pattern">
+
+    </div>
+    <div id="stars">
+
+    </div>
+    <script>
+        let pattern =document.getElementById("pattern");
+        let stars=document.getElementById("stars")
+        for(let i=0;i<5;i++){
+            stars.innerHTML+=`<p>*</p>`
+        }
+
+        for (let i = 0; i < 5; i++) {
+                document.write("*")
+        }
+
+        for(let i=1;i<=5;i++){
+            for(let j=1;j<=i;j++){
+                stars.innerHTML+=`<span>* </span>`
+            }
+            stars.innerHTML+=`<p></p>`
+        }
+
+        for (let i = 5; i >=1 ; i--) {
+                for (let j = 1; j <= i; j++) {
+                    stars.innerHTML += `<span>* </span>`
+                }
+                stars.innerHTML += `<p></p>`
+            }
+
+        for (let i = 1; i <= 5; i++) {
+            let row = "";
+            // Add spaces
+            for (let j = 1; j <= 5 - i; j++) {
+                row += "&nbsp; &nbsp;";
+                // row+="  "
+                }
+            // Add stars
+            for (let k = 1; k <= i; k++) {
+                row += "* ";
+                }
+            pattern.innerHTML += `<p>${row}</p>`//`<pre>${row}</pre>`;
+        }
+
+        for(let i=1;i<=5;i++){
+            let row='';
+            for(let j=1;j<=i;j++){
+                row+=j+' '
+            }
+            pattern.innerHTML+=`<p>${row}</p>`
+        }
+    </script>
+</body>
+</html>
