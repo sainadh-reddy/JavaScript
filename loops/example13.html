@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 12</title>
+</head>
+<body>
+    <!-- 13. Flash Sale Display
+    Display product prices after applying 20% discount using do...while. -->
+    <script>
+        let products = [
+                { name: "Shirt", price: 500},
+                { name: "Watch", price: 1200},
+                { name: "Trousers", price: 1200}
+            ]
+        const discount=0.2;
+        let i=0;
+        do{
+            console.log(products[i].name, '',products[i].price-(products[i].price*discount));
+            i++;
+        }while(i<products.length)
+    </script>
+</body>
+</html>

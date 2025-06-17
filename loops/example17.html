@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 17</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="details">
+
+        </tbody>
+    </table>
+    <!-- 17. Inventory Table with Total Value
+    From an array of objects with name, price, quantity, create a table showing each product and
+    compute total stock value = price × quantity. -->
+
+    <script>
+        let products = [
+            { name: "Shirt", quantity: 8, price: 699 },
+            { name: "Trousers", quantity: 8, price: 1299 },
+            { name: "Watch", quantity: 3, price: 9999 }
+        ];
+        let table = document.getElementById("details");
+        for (let i = 0; i < products.length; i++) {
+            table.innerHTML += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${products[i].name}</td>
+                <td>${products[i].quantity}</td>
+                <td>${products[i].price}</td>
+                <td>${products[i].price * products[i].quantity}</td>
+            </tr>
+            `
+        }
+    </script>
+</body>
+
+</html>

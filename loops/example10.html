@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 10</title>
+</head>
+<body>
+    <ul id="items">
+
+    </ul>
+    <!-- 10. Show First 3 Products from Array
+    Only display the first 3 products in a ul, even if array has more than 3 items. -->
+    <script>
+        let products = [
+                { name: "Keyboard", stock: 3 },
+                { name: "Camara", stock: 1 },
+                { name: "Mouse", stock: 0 },
+                { name: "Charger", stock: 2 }
+            ]
+        let i=0;
+        let items=document.getElementById("items");
+        while(i<3){
+            items.innerHTML+=`<li>${products[i].name}</li>`
+            i++;
+        }
+    </script>
+</body>
+</html>

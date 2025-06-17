@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 23</title>
+</head>
+<body>
+    <!-- 23. Calculate Average Price
+    From product array, calculate and display the average price of all items. -->
+    <script>
+        let products = [
+                { name: "Shirt", price: 500 },
+                { name: "Watch", price: 8900 },
+                { name: "Trousers", price: 1200 }
+            ]
+        let total=0;
+        for(let i=0;i<products.length;i++){
+            total+=products[i].price;
+        }
+        console.log("Average price: ",(total/products.length))
+    </script>
+</body>
+</html>

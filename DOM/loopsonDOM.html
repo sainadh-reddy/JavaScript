@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loopsOnDOM</title>
+    <style>
+        .item{
+            color:green;
+            background-color: grey;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <p class="item">item1</p>
+        <p class="item">ttem2</p>
+        <p class="item">item3</p>
+        <p class="item">item4</p>
+        <p class="item">item5</p>
+    </div>
+    <script>
+        let collection=document.getElementsByClassName("item");
+        
+        for(let i=0;i<collection.length;i++){
+            collection[i].style.color='blue';
+            collection[i].style.backgroundColor = 'green';
+        }
+        collection[3].style.color = 'white';
+    </script>
+</body>
+</html>

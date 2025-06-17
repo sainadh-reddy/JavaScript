@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 18</title>
+</head>
+<body>
+    <!-- 18. Compare Cart Price and Budget
+    Sum up cart total using a loop, and compare with user-defined budget (say 5000). Show
+    message:
+    • "Within Budget" or
+    • "Budget Exceeded -->
+    <script>
+        let products = [
+                { name: "Shirt", quantity: 8, price: 699 },
+                { name: "Trousers", quantity: 8, price: 1299 },
+                { name: "Watch", quantity: 3, price: 9999 }
+            ];
+        let budget=5000;
+        let total=0;
+        let i=0;
+        while(i<products.length){
+            total+=products[i].price*products[i].quantity
+        }
+        
+        if(total>budget){
+            console.log("Budget Exceeded");
+        }
+        else{
+            console.log("Within Budget");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 20</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>GST</th>
+                <th>Final Price</th>
+            </tr>
+        </thead>
+        <tbody id="table">
+
+        </tbody>
+    </table>
+    <!-- 20. Tax Calculator Table
+    Each product has price. Add 18% GST and show table with Product, Price, GST, Final Price -->
+    <script>
+        let table=document.getElementById("table")
+        let products = [
+            { name: "Shirt", price: 500},
+            { name: "Watch", price: 8900},
+            { name:"Trousers", price: 1200}
+        ]
+        for(let i=0;i<products.length;i++){
+            table.innerHTML+=`<tr>
+                <td>${products[i].name}</td>
+                <td>${products[i].price}</td>
+                <td>${products[i].price*0.18}</td>
+                <td>${products[i].price + (products[i].price * 0.18)}</td>
+                </tr>`
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 5</title>
+</head>
+<body>
+    <div id="products">
+    </div>
+    <!-- 5. Show Only Products with Stock
+    Loop through an array of products with stock and display only those where stock > 0.
+    [
+    { name: "Keyboard", stock: 3 },
+    { name: "Mouse", stock: 0 },
+    { name: "Charger", stock: 2 }
+    ] -->
+    <script>
+        let products= [
+                { name: "Keyboard", stock: 3 },
+                { name: "Mouse", stock: 0 },
+                { name: "Charger", stock: 2 }
+            ]
+        let product=document.getElementById("products");
+        for(let i=0;i<products.length;i++){
+            if(products[i].stock>0){
+                product.innerHTML+=`<p>${products[i].name} ${products[i].stock}</p>`
+            }
+        }
+    </script>
+</body>
+</html>

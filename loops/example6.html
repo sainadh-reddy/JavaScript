@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 6</title>
+</head>
+<body>
+    <div id="count"></div>
+    <!-- 6. Countdown Display
+    Use a while loop to count down from 10 to 1 and display in a <div>. -->
+        <script>
+            let div=document.getElementById("count");
+            let count=10;
+            while(count>0){
+                div.innerHTML+=`<p>${count}</p>`
+                count--;
+            }
+        </script>
+</body>
+</html>

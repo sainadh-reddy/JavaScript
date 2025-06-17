@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 9</title>
+</head>
+<body>
+    <!-- 9. Show Stock-Based Product List
+    From a product array, display names until stock becomes 0 using while. -->
+    <script>
+        let products = [
+                { name: "Keyboard", stock: 3 },
+                { name: "Camara", stock: 1 },
+                { name: "Mouse", stock: 0 },
+                { name: "Charger", stock: 2 }
+            ]
+        let i=0;
+        while(products[i].stock>0){
+            console.log(products[i].name);
+            i++;
+        }
+    </script>
+</body>
+</html>

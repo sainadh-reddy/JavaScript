@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 14</title>
+</head>
+<body>
+    <div id="wishlist">
+    </div>
+    <!-- 14. Wishlist Items
+    Use do...while to loop through a wishlist array and display items using innerHTML. -->
+    <script>
+        let wishlist=["Shirt", "Trousers", "Watch", "Pen", "Book"];
+        let list=document.getElementById("wishlist");
+        let i=0;
+        do{
+            list.innerHTML+=`<li>${wishlist[i]}</li>`;
+            i++;
+        }while(i<wishlist.length);
+    </script>
+</body>
+</html>

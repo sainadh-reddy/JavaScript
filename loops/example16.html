@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 16</title>
+</head>
+<body>
+    <!-- 16. Category-wise Product Display (Nested Loop)
+    Use nested for loops. Outer array: categories. Inner array: products in that category.
+    let categories = [
+    { name: "Mobiles", items: ["iPhone", "OnePlus", "Samsung"] },
+    { name: "Laptops", items: ["HP", "Dell", "Asus"] }
+    ]; -->
+    <script>
+        let categories = [
+                { name: "Mobiles", items: ["iPhone", "OnePlus", "Samsung"] },
+                { name: "Laptops", items: ["HP", "Dell", "Asus"] }
+            ];
+        for(let i=0;i<categories.length;i++){
+            console.log(categories[i].name);
+            for(let j=0;i<categories[i].items.length;j++){
+                console.log(categories[i].items[j]);
+            }
+        }
+    </script>
+</body>
+</html>

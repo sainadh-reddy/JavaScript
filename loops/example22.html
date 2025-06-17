@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 22</title>
+</head>
+<body>
+    <!-- 22. Find Product with Max Price
+    Loop through product objects and display the product with highest price. -->
+    <script>
+        let products = [
+                { name: "Shirt", price: 500 },
+                { name: "Watch", price: 8900 },
+                { name: "Trousers", price: 1200 }
+            ]
+        let max=products[0].price
+        for(let i=1;i<products.length;i++){
+            if(products[i].price>max){
+                max=products[i].price
+        }
+        for(let i=0;i<products.length;i++){
+            if(products[i].price==max){
+                console.log(products[i].name,products[i].price)
+            }
+        }
+        }
+    </script>
+</body>
+</html>

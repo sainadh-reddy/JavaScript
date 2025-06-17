@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 15</title>
+</head>
+<body>
+    <!-- 15. Add Product Until Stock Zero
+    Simulate a product being added until stock reduces to 0. Show how many times it was
+    added. -->
+    <script>
+        let product={name:"Shirt", stock:10};
+        let cart=[];
+        let i=0;
+        do{
+            cart[i]=product.name
+            i++;
+            product.stock--;
+        }while(product.stock>0)
+        console.log(cart)
+    </script>
+</body>
+</html>

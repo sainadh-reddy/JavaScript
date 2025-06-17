@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 21</title>
+</head>
+<body>
+    <!-- 21. Show Products in Reverse Order
+    Use a loop to show all product names from last to first (reverse index). -->
+    <script>
+        let products = [
+            { name: "Keyboard", stock: 3 },
+            { name: "Mouse", stock: 0 },
+            { name: "Charger", stock: 2 }
+        ]
+        i=products.length-1
+        while(i>=0){
+            console.log(products[i].name);
+            i--;
+        };
+    </script>
+</body>
+</html>

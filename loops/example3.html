@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 3</title>
+    <style>
+        #cards{
+            display: flex;
+        }
+        #productcard{
+            text-align: center;
+            background-color: antiquewhite;
+            margin: 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cards">
+    </div>
+    <!-- 3. Display Product Cards
+    Create product cards using loop. Each card should show name, price, and category.
+    [
+    { name: "Shirt", price: 500, category: "Clothing" },
+    { name: "Watch", price: 1200, category: "Accessories" }
+    ] -->
+    <script>
+        let products= [
+                { name: "Shirt", price: 500, category: "Clothing" },
+                { name: "Watch", price: 1200, category: "Accessories" }
+            ]
+        let card=document.getElementById("cards");
+        for(let i=0;i<products.length;i++){
+            card.innerHTML+=`
+            <div id="productcard">
+                <p>${products[i].name}</p>
+                <p>${products[i].price}</p >
+                <p>${products[i].category}</p>
+            </div>`
+        }
+    </script>
+</body>
+</html>
