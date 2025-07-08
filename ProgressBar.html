@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #progress{
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="progress"></div>
+    <script>
+        let bar = document.getElementById("progress");
+        let progress = 0;
+        bar.style.height = "50px";
+        bar.style.margin = "20px";
+
+        let interval = setInterval(() => {
+            if (progress >= 100) {
+                clearInterval(interval);
+                return;
+            }
+
+            progress += 10;
+            bar.style.width = progress + "%";
+            bar.textContent = progress + "%";
+
+            if (progress <= 30) {
+                bar.style.backgroundColor = "red";
+            } else if (progress <= 70) {
+                bar.style.backgroundColor = "orange";
+            } else {
+                bar.style.backgroundColor = "green";
+            }
+        }, 500); 
+    </script>
+</body>
+</html>

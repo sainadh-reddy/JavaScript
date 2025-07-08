@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get version</title>
+</head>
+<body>
+    <button onclick="getVersion()">Click here to get Version</button>
+    <p id="version"></p>
+    <script>
+        let version="V1.0.1.12";
+        function getVersion(){
+            return document.getElementById("version").innerText = version;
+        };
+    </script>
+</body>
+</html>
