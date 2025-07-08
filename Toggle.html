@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Toggle</title>
+</head>
+<body>
+    <button onclick="theme()">Toggle Theme</button>
+
+    <h1>Hello, World!</h1>
+    <p>This is a demo of dark/light theme toggle.</p>
+
+    <script>
+        let toggle = false;
+        function theme(){
+            if(toggle){
+                document.body.style.backgroundColor = "white";
+                document.body.style.color="black";
+                toggle=false;
+            }
+            else{
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                toggle=true;
+            }
+        }
+    </script>
+</body>
+
+</html>
