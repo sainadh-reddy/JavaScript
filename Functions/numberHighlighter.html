@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Highlighter</title>
+</head>
+<body>
+    <!-- 5. Number Highlighter with Recursion
+    Automatically display numbers in sequence with a 1-second delay between each number,
+    using recursion.
+    • Input: Range (e.g., 1 to 10)
+    • Highlight numbers one by one every second
+    • Concept: Recursive function, base case, setTimeout -->
+    <p id="number"></p>
+    <script>
+        let number=document.getElementById("number");
+        let n=1;
+        function highlighter(n){
+            if(n>10) return;
+            number.innerText+=" "+n;
+            setTimeout(()=>{
+                highlighter(n+1)},1000);
+        }
+        highlighter(n);
+    </script>
+</body>
+</html>
