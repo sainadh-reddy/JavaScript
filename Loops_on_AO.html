@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops on array of objects</title>
+
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+    <div id="container" class="flex flex-wrap justify-center gap-4 p-6">
+
+    </div>
+
+    <script>
+        let products = [
+            { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu077uy1xWR6ZJSs7J_EedijEmRP_8loSfEQ&s", name: "Laptop", price: 1000, discount: 100 },
+            { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu077uy1xWR6ZJSs7J_EedijEmRP_8loSfEQ&s", name: "Desktop", price: 800, discount: 50 },
+            { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu077uy1xWR6ZJSs7J_EedijEmRP_8loSfEQ&s", name: "Smartwatch", price: 200, discount: 20 },
+            { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu077uy1xWR6ZJSs7J_EedijEmRP_8loSfEQ&s", name: "Headphones", price: 150, discount: 10 },
+            { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu077uy1xWR6ZJSs7J_EedijEmRP_8loSfEQ&s", name: "Smartphone", price: 500, discount: 50 },
+            { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu077uy1xWR6ZJSs7J_EedijEmRP_8loSfEQ&s", name: "Smart TV", price: 1200, discount: 200 },
+            { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu077uy1xWR6ZJSs7J_EedijEmRP_8loSfEQ&s", name: "Camera", price: 600, discount: 100 },
+            { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu077uy1xWR6ZJSs7J_EedijEmRP_8loSfEQ&s", name: "Gaming Console", price: 400, discount: 50 },
+            { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu077uy1xWR6ZJSs7J_EedijEmRP_8loSfEQ&s", name: "Speaker", price: 250, discount: 30 },
+            { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu077uy1xWR6ZJSs7J_EedijEmRP_8loSfEQ&s", name: "Tablet", price: 300, discount: 50 }
+        ];
+        let container = document.getElementById("container");
+
+        for (let i = 0; i < products.length; i++) {
+            let product = products[i];
+            let productDiv = document.createElement("div");
+            productDiv.innerHTML = `
+                <div class="border p-4 shadow-lg rounded-lg bg-white w-64 text-center">
+                    <img src="${product.url}" alt="${product.name}" class="w-24 h-24 mx-auto mb-3 object-contain">
+                    <h3 class="text-lg font-semibold mb-1">${product.name}</h3>
+                    <p class="text-gray-700">Price: <span class="font-medium">$${product.price}</span></p>
+                    <p class="text-red-500">Discount: $${product.discount}</p>
+                    <p class="text-green-600 font-bold">Final Price: $${product.price - product.discount}</p>
+                </div>
+            `;
+            container.appendChild(productDiv);
+        }
+    </script>
+</body>
+
+</html>
