@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 9</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <!-- 9. Dynamic Summary Card Generator:
+    Create a function that takes 4 parameters: customer name, item name, quantity, and
+    price per item. Display a styled summary card using innerHTML with full order details
+    and total. -->
+    <div class="w-50 bg-amber-500 m-2 p-2 rounded-xl" id="card"></div>
+    <script>
+        function summaryCard(customer,item,quantity,price){
+            document.getElementById("card").innerHTML=`<p>${customer}</p>
+            <p>${item} x ${quantity} = ${price*quantity}</p>`;
+        };
+        summaryCard("Sainadh","Watch",2,3599);
+    </script>
+</body>
+</html>
