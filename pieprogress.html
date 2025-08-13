@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pie Chart Progress</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .pie-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(red 0%, #ddd 0%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .pie-text {
+            position: absolute;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pie-container" id="pie">
+        <div class="pie-text" id="pie-text">0%</div>
+    </div>
+
+    <script>
+        const pie = document.getElementById("pie");
+        const text = document.getElementById("pie-text");
+        let progress = 0;
+
+        const interval = setInterval(() => {
+            if (progress >= 100) {
+                clearInterval(interval);
+                return;
+            }
+
+            progress += 10;
+            text.textContent = progress + "%";
+
+            let color;
+            if (progress <= 30) {
+                color = "red";
+            } else if (progress <= 70) {
+                color = "orange";
+            } else {
+                color = "green";
+            }
+
+            // Update conic gradient for pie fill
+            pie.style.background = `conic-gradient(${color} ${progress}%, #ddd ${progress}%)`;
+        }, 500);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texting effect</title>
+</head>
+<body>
+
+    <div>
+        <pre id="textMessage"></pre>
+    </div>
+
+    <script>
+        const message="Welcome to my World!";
+        let i=0;
+        let display = document.getElementById("textMessage");
+        
+        function highlight(callback){
+            let displayMessage = setInterval(()=>{
+                if(i<message.length){
+                    display.innerText+=message.charAt(i)
+                    i++;
+                }else{
+                    clearInterval(displayMessage);
+                    setTimeout(()=>{
+                        callback();
+                    },1000)
+                }
+            },500)
+        }
+
+        function displayFullMessage(){
+            display.innerHTML=message;
+            display.style.color = "red"
+        }
+
+        highlight(displayFullMessage)
+    </script>
+</body>
+</html>

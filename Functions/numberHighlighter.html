@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Number Highlighter</title>
 </head>
-<body>
+<body class="bg-gray-100 flex min-h-screen items-center justify-center">
     <!-- 5. Number Highlighter with Recursion
     Automatically display numbers in sequence with a 1-second delay between each number,
     using recursion.
     • Input: Range (e.g., 1 to 10)
     • Highlight numbers one by one every second
     • Concept: Recursive function, base case, setTimeout -->
-    <p id="number"></p>
+    <p id="number" class="bg-white border-2 border-gray-800 rounded-xl p-2"></p>
     <script>
         let number=document.getElementById("number");
         let n=1;
+        const colors=["red","blue","green","pink","brown","yellow","violet","orange","red","green"]
         function highlighter(n){
             if(n>10) return;
             number.innerText+=" "+n;
+            number.style.color=colors[n-1];
             setTimeout(()=>{
                 highlighter(n+1)},1000);
         }
