@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-md space-y-4">
+        <p id="message" class="text-l text-center m-4"></p>
+        <h2 class="text-2xl font-semibold mb-6 text-center">Sign Up</h2>
+        <!-- <form action="#" class="space-y-4"> -->
+            <div>
+                <label for="firstName" class="block text-gray-700">First name</label>
+                <input type="text" id="firstName" name="firstName"
+                    class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300">
+            </div>
+            <div>
+                <label for="lastName" class="block text-gray-700">Last name</label>
+                <input type="text" id="lastName" name="lastName"
+                    class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300">
+            </div>
+            <div>
+                <label for="email" class="block text-gray-700">Email Id</label>
+                <input type="email" id="email" name="email"
+                    class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300">
+                <p id="emailDisplayError"></p>
+            </div>
+            <div>
+                <label for="password" class="block text-gray-700">Password</label>
+                <input type="password" id="password" name="password"
+                    class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300">
+                <p id="passwordDisplayError"></p>
+            </div>
+            <div>
+                <label for="confirmPassword" class="block text-gray-700">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword"
+                    class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300">
+            </div>
+            <div>
+                <button  onclick="register()"
+                    class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200">
+                    Sign Up
+                </button>
+                <p class="text-center text-gray-600 mt-4">
+                    Already have an account?
+                    <a href="./Login.html" class="text-blue-500 hover:underline">Log in</a>
+                </p>
+            </div>
+        <!-- </form> -->
+    </div>
+    <script>
+        function register(){
+            let firstName = document.getElementById("firstName").value.toUpperCase();
+            let lastName = document.getElementById("lastName").value.toUpperCase();
+            let email = document.getElementById("email").value.toLowerCase();
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            let displayMessage = document.getElementById("message");
+
+            let emailPattern = /^[A-Za-z0-9./&%$#@]+@[A-Za-z0-9]+\.[a-zA-Z]{2,}$/;
+            let passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*\W).{8,}$/;
+
+            if(emailPattern.test(email) && passwordPattern.test(password) && password === confirmPassword){
+                localStorage.setItem("First Name",firstName);
+                localStorage.setItem("Last Name", lastName);
+                localStorage.setItem("Email", email);
+                localStorage.setItem("Password", password);
+                displayMessage.innerText = "Registration Successful";
+                displayMessage.className = "text-green-500";
+            } else{
+                if(password != confirmPassword){
+                    displayMessage.innerText = "Password and confirm password should be same";
+                    displayMessage.className = "text-red-500";
+                }
+                if(!emailPattern.test(email)){
+                    document.getElementById("emailDisplayError").innerText = "Enter legit email";
+                    document.getElementById("emailDisplayError").className = "text-red-500";
+                }
+                if(!passwordPattern.test(password)){
+                    document.getElementById("passwordDisplayError").innerText = "Password doesn't match required specifications";
+                    document.getElementById("passwordDisplayError").className = "text-red-500";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bill Split</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <div class="max-w-md mx-auto mt-10 bg-white p-8 rounded-lg shadow">
+        <h1 class="text-2xl font-bold text-center text-indigo-700 mb-4">Bill Split</h1>
+        <p class="text-gray-600 text-center mb-6">
+            This page helps you split bills among friends or family.
+        </p>
+
+        <div class="mb-4 flex">
+            <input type="text" id="person-name" placeholder="Enter person's name"
+                class="flex-1 border rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+            <button type="button" id="add-person"
+                class="bg-indigo-600 text-white px-4 py-2 rounded-r hover:bg-indigo-700 transition">
+                Add
+            </button>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-600 mb-2" for="person-dropdown">Select a Person:</label>
+            <select id="person-dropdown"
+                class="w-full border rounded px-2 py-2 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+            </select>
+            <button type="button" id="remove-person"
+                class="mt-2 w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+                Remove
+            </button>
+        </div>
+
+        <form id="bill-split-form" class="mb-6">
+            <label class="block text-gray-600 mb-2" for="total-bill">Total Bill Amount:</label>
+            <input type="number" id="total-bill" name="total-bill" required step="0.01" min="0"
+                class="w-full border rounded px-3 py-2 mb-3 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+            <button type="submit"
+                class="w-full bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
+                Split Bill
+            </button>
+        </form>
+
+        <div id="result" class="mt-4">
+            <h2 class="text-lg font-semibold text-indigo-700 mb-2">Result</h2>
+            <div id="split-amount"></div>
+        </div>
+    </div>
+
+    <script>
+        let names = JSON.parse(localStorage.getItem("splitter_names")) || [];
+
+        function updateDropdown() {
+            const dropdown = document.getElementById("person-dropdown");
+            dropdown.innerHTML = "";
+            const sortedNames = [...names].sort();
+            sortedNames.forEach((name) => {
+                const option = document.createElement("option");
+                option.value = name;
+                option.textContent = name;
+                dropdown.appendChild(option);
+            });
+        }
+
+        updateDropdown();
+
+        document.getElementById("add-person").addEventListener("click", () => {
+            const input = document.getElementById("person-name");
+            const name = input.value.trim();
+            if (name && !names.includes(name)) {
+                names.push(name);
+                localStorage.setItem("splitter_names", JSON.stringify(names));
+                updateDropdown();
+            }
+            input.value = "";
+            input.focus();
+        });
+
+        document.getElementById("remove-person").addEventListener("click", () => {
+            const dropdown = document.getElementById("person-dropdown");
+            const selected = dropdown.value;
+            if (!selected) {
+                alert("Please select a person to remove.");
+                return;
+            }
+
+            names = names.filter(name => name !== selected);
+            localStorage.setItem("splitter_names", JSON.stringify(names));
+            updateDropdown();
+        });
+
+        document.getElementById("bill-split-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const totalBill = parseFloat(document.getElementById("total-bill").value);
+
+            if (isNaN(totalBill) || totalBill < 0 || names.length === 0) {
+                document.getElementById("split-amount").innerHTML =
+                    "<div class='text-red-600'>Enter a valid bill and at least one name.</div>";
+                return;
+            }
+
+            const splitAmount = (totalBill / names.length).toFixed(2);
+            localStorage.setItem("splitter_last_bill", JSON.stringify({
+                totalBill: totalBill,
+                perPerson: splitAmount,
+                names: names
+            }));
+
+            let html = "";
+            names.forEach((name) => {
+                html += `<div class="person-result text-gray-700">${name} : <span class="font-medium text-indigo-600">₹${splitAmount}</span></div>`;
+            });
+            document.getElementById("split-amount").innerHTML = html;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegEx</title>
+</head>
+<body>
+    <p id="regex"></p>
+    <script>
+        const customRegex = /^[a-zA-Z0-9@#$]+$/;
+        const targetString = "Sainadh#02";
+
+        if (customRegex.test(targetString)) {
+            document.getElementById("regex").innerText=`"${targetString}" matches the regex.`; // Output: "Sainadh#02" matches the regex.
+        } else {
+            document.getElementById("regex").innerText = `"${targetString}" does not matche the regex.`;
+        };
+    </script>
+</body>
+</html>
